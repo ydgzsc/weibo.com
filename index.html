@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cz微博</title>
+</head>
+
+<body>
+  <div style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- 顶部导航栏 -->
+    <div style="display: flex; align-items: center; justify-content: space-between; background-color: #f5f5f5; padding: 10px;">
+      <div style="width: 100px;">
+        < img src="https://pic1.zhimg.com/v2 - 7c2c8a9d9a9a9a9a9a9a9a9a9a9a9a9a_r.jpg" alt="微博logo" style="height: 30px;">
+      </div>
+      <div style="display: flex; align-items: center;">
+        <input type="text" placeholder="搜索微博、找人" style="padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+        <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-left: 5px;">搜索</button>
+      </div>
+      <div style="display: flex; align-items: center;">
+        < img src="https://pic2.zhimg.com/v2 - 8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b_r.jpg" alt="用户头像" style="width: 30px; height: 30px; border-radius: 50%; margin-left: 10px;">
+        <div style="position: relative; display: inline-block;">
+          <button style="background-color: #f5f5f5; color: black; padding: 5px; border: none; cursor: pointer;">更多</button>
+          <div style="display: none; position: absolute; background-color: #f9f9f9; min-width: 100px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); z-index: 1;">
+            设置
+            退出登录
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主体内容区 -->
+    <div style="display: flex; flex: 1;">
+      <!-- 左侧边栏 -->
+      <div style="width: 200px; background-color: #f5f5f5; padding: 10px;">
+        <div style="margin-bottom: 10px;">
+          <h3 style="margin-top: 0;">关注</h3>
+          <ul style="list-style-type: none; padding: 0; margin: 0;">
+            <li>好友动态</li>
+            <li>兴趣推荐</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <h3 style="margin-top: 0;">功能</h3>
+          <ul style="list-style-type: none; padding: 0; margin: 0;">
+            <li>发微博</li>
+            <li>私信</li>
+            <li>话题</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 中间微博内容区 -->
+      <div style="flex: 1; padding: 10px;">
+        <!-- 发布微博区域 -->
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+          <div style="display: flex; align-items: center;">
+            < img src="https://pic3.zhimg.com/v2 - 9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c_r.jpg" alt="用户头像" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+            <textarea id="weibo-content" placeholder="有什么新鲜事想分享给大家？" style="flex: 1; border: none; resize: none; padding: 5px;"></textarea>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+            <button id="post-button" style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px;">发布</button>
+            <button id="add-picture" style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px;">添加图片</button>
+            <button id="add-emoji" style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px;">添加表情</button>
+          </div>
+        </div>
+
+        <!-- 微博动态展示 -->
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+          <div style="display: flex; align-items: center;">
+            < img src="https://pic4.zhimg.com/v2 - a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0_r.jpg" alt="用户头像" style="width: 40px; height: 40px; border-radius: 50%;">
+            <div style="margin-left: 10px;">
+              <span style="font-weight: bold;">张三</span>
+              <span style="color: gray;">2小时前</span>
+            </div>
+          </div>
+          <div style="margin-top: 5px;">
+            <p>今天过得真不错，分享一张美照。</p >
+            < img src="https://pic5.zhimg.com/v2 - b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0_r.jpg" alt="微博图片" style="max-width: 100%;">
+          </div>
+          <div style="display: flex; margin-top: 5px;">
+            <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px;">👍 点赞</button>
+            <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px;">💬 评论</button>
+            <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px;">🔄 转发</button>
+          </div>
+        </div>
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+          <div style="display: flex; align-items: center;">
+            < img src="https://pic6.zhimg.com/v2 - c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0_r.jpg" alt="用户头像" style="width: 40px; height: 40px; border-radius: 50%;">
+            <div style="margin-left: 10px;">
+              <span style="font-weight: bold;">cz</span>
+              <span style="color: gray;">3小时前</span>
+            </div>
+          </div>
+          <div style="margin-top: 5px;">
+            <p>努力工作，为梦想加油！</p >
+          </div>
+          <div style="display: flex; margin-top: 5px;">
+            <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px;">👍 点赞</button>
+            <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px;">💬 评论</button>
+            <button style="background-color: #0084ff; color: white; border: none; padding: 5px 10px; border-radius: 4px;">🔄 转发</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧边栏 -->
+      <div style="width: 200px; background-color: #f5f5f5; padding: 10px;">
+        <div style="margin-bottom: 10px;">
+          <h3>热门话题</h3>
+          <ul style="list-style-type: none; padding: 0; margin: 0;">
+            <li>#热门事件1#</li>
+            <li>#热门事件2#</li>
+            <li>#热门事件3#</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <h3>推荐关注</h3>
+          <ul style="list-style-type: none; padding: 0; margin: 0;">
+            <li>明星A</li>
+            <li>大V B</li>
+            <li>品牌C</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部信息 -->
+    <div style="background-color: #f5f5f5; text-align: center; padding: 10px;">
+      <p>2024版权所有 &copy;cz工作室</p >
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const postButton = document.getElementById('post-button');
+      const weiboContent = document.getElementById('weibo-content');
+
+      postButton.addEventListener('click', function () {
+        const content = weiboContent.value;
+        if (content) {
+          console.log("发布的微博内容：" + content);
+          weiboContent.value = "";
+          location.reload();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
